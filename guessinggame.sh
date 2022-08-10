@@ -4,7 +4,7 @@
 function badguess {
 	echo "Guess how many files are in the current directory: "
 	read guess
-	files=$(ls | wc -l | xargs)
+	files=$(ls -a| wc -l | xargs)
 	while [[ $guess != $files ]]
 	do
 		if [[ $guess > $files ]]
@@ -18,6 +18,4 @@ function badguess {
 	done
 	echo "Congratulations, you guessed correctly!"
 }
-
-echo "Are you reading this?"
 badguess
